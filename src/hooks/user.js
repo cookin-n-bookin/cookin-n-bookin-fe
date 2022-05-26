@@ -1,4 +1,6 @@
-import { signUpUser } from '../services/users';
+import { signUpUser, signInUser } from '../services/users';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserProvider';
 
 export const useAuth = () => {
   const context = useContext(UserContext);
@@ -7,9 +9,25 @@ export const useAuth = () => {
     throw new Error('useUser must be called within a UserProvider');
   }
 
-  const signUp = async (email, password) => {
-    await signUpUser(email, password);
+  const { setUser } = context;
+
+  const signUp = async (username, password) => {
+    try {
+      const user = await signUpUser(username, password);
+      setUser(user);
+    } catch (error) {
+      throw error;
+    }
   };
 
-  return { signUp };
+  const signIn = async (username, password) => {
+    try {
+      const user = await signInUser(username, password);
+      setUser(user);
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  return { signUp, signIn };
 };

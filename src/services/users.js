@@ -1,9 +1,14 @@
 export async function getUser() {
   console.log('getUser service');
+  return {};
 }
 
 export async function signUpUser(username, password) {
   console.log('signUp service');
+  return {
+    id: 1,
+    username: `${username}`,
+  };
 }
 
 export async function signInUser(username, password) {

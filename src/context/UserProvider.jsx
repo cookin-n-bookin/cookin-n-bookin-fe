@@ -1,12 +1,19 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { getUser } from '../services/users';
 
-const UserContext = createContext();
+export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState({});
 
+  useEffect(() => {
+    getUser()
+    .then(setUser);
+  }, [])
+  
   return (
     <UserContext.Provider
-    value={{}}>
+    value={{ user, setUser }}>
       {children}
     </UserContext.Provider>
   )
