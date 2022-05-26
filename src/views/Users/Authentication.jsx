@@ -4,7 +4,7 @@ import { useAuth } from '../../hooks/user';
 
 export default function Authentication({ isSigningUp = false }) {
   const history = useHistory();
-  const { signUp } = useAuth();
+  const { signUp, signIn } = useAuth();
 
   const handleSignUp = async (username, password) => {
     await signUp(username, password);
