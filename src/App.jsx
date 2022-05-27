@@ -11,10 +11,10 @@ export default function App() {
         <Header />
           <main>
             <Route exact path="/auth/sign_in">
-              <Authentication />
+              <Authentication isSigningUp={false}/>
             </Route>
             <Route exact path="/auth/sign_up">
-              <Authentication isSigningUp />
+              <Authentication isSigningUp={true}/>
             </Route>
             <Route exact path="/home">
               <Home />
