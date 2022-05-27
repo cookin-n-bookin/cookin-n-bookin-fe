@@ -9,7 +9,10 @@ export const useAuth = () => {
     throw new Error('useAuth must be called within a UserProvider');
   }
 
-  const { setUser } = context;
+  const { user, setUser } = context;
+
+  const isLoggedIn = user?.username;
+  console.log('isLoggedIn in useAuth hook', isLoggedIn);
 
   const signUp = async (username, password) => {
     try {
@@ -35,7 +38,7 @@ export const useAuth = () => {
     setUser({});
   };
 
-  return { signUp, signIn, signOut };
+  return { signUp, signIn, signOut, isLoggedIn };
 };
 
 export const useUser = () => {
@@ -45,7 +48,7 @@ export const useUser = () => {
     throw new Error('useUser must be called within a UserProvider');
   }
 
-  const { user } = context;
+  const { user, setUser } = context;
 
-  return { user };
+  return { user, setUser };
 };

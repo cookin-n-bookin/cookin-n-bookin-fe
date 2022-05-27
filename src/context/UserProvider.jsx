@@ -4,15 +4,19 @@ import { getUser } from '../services/users';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const currentUser = getUser();
+  const [user, setUser] = useState(currentUser || { username: null});
+  console.log('user in context', user)
 
   useEffect(() => {
     if (!user) return null;
+
     getUser().then(setUser);
+    
   }, []);
-  console.log('user:', user);
+  
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, currentUser }}>
       {children}
     </UserContext.Provider>
   );

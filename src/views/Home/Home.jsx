@@ -6,12 +6,13 @@ export default function Home() {
   const { user } = useUser();
 
   console.log('from home.jsx', user);
+  
   return (
     <>
       <div>Home</div>
-      <button type="button" onClick={signOut}>
+      {/* <button type="button" onClick={signOut}>
         Sign out
-      </button>
+      </button> */}
     </>
   );
 }
