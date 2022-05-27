@@ -1,6 +1,14 @@
 export async function getUser() {
   console.log('getUser service');
-  return {};
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/users/me`, {
+      credentials: 'include',
+    });
+    console.log('res', res);
+    return res.json();
+  } catch (error) {
+    return null;
+  }
 }
 
 export async function signUpUser(username, password) {
@@ -34,4 +42,11 @@ export async function signInUser(username, password) {
 
 export async function signOutUser() {
   console.log('signOut service');
+  const res = await fetch(`${process.env.API_URL}/api/v1/users/sessions`, {
+    method: 'DELETE',
+    credentials: 'include',
+    mode: 'cors',
+  });
+
+  return res.ok;
 }
