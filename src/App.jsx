@@ -9,20 +9,18 @@ export default function App() {
     <Switch>
       <UserProvider>
         <Header />
-          <main>
-            <Route exact path="/auth/sign_in">
-              <Authentication isSigningUp={false}/>
-            </Route>
-            <Route exact path="/auth/sign_up">
-              <Authentication isSigningUp={true}/>
-            </Route>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-          </main>
+        <Route exact path="/auth/sign_in">
+          <Authentication isSigningUp={false}/>
+        </Route>
+        <Route exact path="/auth/sign_up">
+          <Authentication isSigningUp={true}/>
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/home" />
+        </Route>
       </UserProvider>
     </Switch>
   );
