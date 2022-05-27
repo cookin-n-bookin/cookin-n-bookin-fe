@@ -1,10 +1,8 @@
-import { useAuth } from '../../hooks/user'
+import { useAuth, useUser } from '../../hooks/user'
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 export default function AuthButton() {
   const { isLoggedIn, signOut } = useAuth();
-  console.log('isLoggedIn authButton component', isLoggedIn)
 
   return (
     <>

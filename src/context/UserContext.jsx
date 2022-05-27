@@ -6,14 +6,13 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const currentUser = getUser();
   const [user, setUser] = useState(currentUser || { username: null });
-  console.log('user in context', user)
 
-  // useEffect(() => {
-  //   if (!user) return null;
+  useEffect(() => {
+    if (!user) return null;
 
-  //   getUser().then(setUser);
+    getUser().then(setUser);
     
-  // }, []);
+  }, []);
   
   return (
     <UserContext.Provider value={{ user, setUser, currentUser }}>

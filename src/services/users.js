@@ -4,7 +4,7 @@ export async function getUser() {
     const res = await fetch(`${process.env.API_URL}/api/v1/users/me`, {
       credentials: 'include',
     });
-    console.log('res', res);
+
     return res.json();
   } catch (error) {
     return null;
@@ -26,7 +26,6 @@ export async function signUpUser(username, password) {
 }
 
 export async function signInUser(username, password) {
-  console.log('signIn service');
   const res = await fetch(`${process.env.API_URL}/api/v1/users/signin`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -41,7 +40,6 @@ export async function signInUser(username, password) {
 }
 
 export async function signOutUser() {
-  console.log('signOut service');
   const res = await fetch(`${process.env.API_URL}/api/v1/users/sessions`, {
     method: 'DELETE',
     credentials: 'include',

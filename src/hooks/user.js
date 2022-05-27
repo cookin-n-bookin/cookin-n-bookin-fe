@@ -1,9 +1,10 @@
 import { signUpUser, signInUser, signOutUser } from '../services/users';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
 
 export const useAuth = () => {
   const context = useContext(UserContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   if (context === undefined) {
     throw new Error('useAuth must be called within a UserProvider');
@@ -11,12 +12,14 @@ export const useAuth = () => {
 
   const { user, setUser } = context;
 
-  const isLoggedIn = user?.username;
-  console.log('isLoggedIn in useAuth hook', isLoggedIn);
+  useEffect(() => {
+    setIsLoggedIn(!!user.username);
+    console.log('useEffect called user.username', user.username);
+  }, [user.username]);
 
   const signUp = async (username, password) => {
     try {
-      const user = await signUpUser(username, password);
+      const { user } = await signUpUser(username, password);
       setUser(user);
     } catch (error) {
       throw error;
@@ -25,7 +28,7 @@ export const useAuth = () => {
 
   const signIn = async (username, password) => {
     try {
-      const user = await signInUser(username, password);
+      const { user } = await signInUser(username, password);
       setUser(user);
     } catch (error) {
       throw error;
