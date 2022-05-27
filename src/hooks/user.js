@@ -15,7 +15,6 @@ export const useAuth = () => {
 
   useEffect(() => {
     setIsLoggedIn(!!user.username);
-    console.log('useEffect called user.username', user.username);
   }, [user.username]);
 
   const signUp = async (username, password) => {
@@ -37,7 +36,6 @@ export const useAuth = () => {
   };
 
   const signOut = async () => {
-    console.log('signOut');
     const user = await signOutUser();
     setUser({});
     toast('See you next time!');

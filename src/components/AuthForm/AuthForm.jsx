@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import useForm from '../../hooks/useForm'
 
 export default function AuthForm({ label, onSubmit }) {
@@ -5,7 +6,8 @@ export default function AuthForm({ label, onSubmit }) {
     username: '',
     password: ''
   })
-
+  
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault(); 
@@ -13,11 +15,12 @@ export default function AuthForm({ label, onSubmit }) {
     try {
       await onSubmit(username, password);
     } catch (error) {
-      console.log('error', error.message)
+      setError(error)
     }
   }
 
   return (
+    <>
     <form
       onSubmit={handleSubmit}>
       <section>
@@ -44,5 +47,7 @@ export default function AuthForm({ label, onSubmit }) {
       type='submit'
       onSubmit={handleSubmit}>Submit</button>
     </form>
+    <p>{error.message}</p>
+    </>
   )
 }
