@@ -1,5 +1,5 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { UserProvider } from './context/UserProvider';
+import { UserProvider } from './context/UserContext';
 import Authentication from './views/Users/Authentication';
 import Home from './views/Home/home';
 import Header from './components/Header/Header';

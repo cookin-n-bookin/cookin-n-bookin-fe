@@ -1,6 +1,6 @@
 import { signUpUser, signInUser, signOutUser } from '../services/users';
 import { useContext } from 'react';
-import { UserContext } from '../context/UserProvider';
+import { UserContext } from '../context/UserContext';
 
 export const useAuth = () => {
   const context = useContext(UserContext);
