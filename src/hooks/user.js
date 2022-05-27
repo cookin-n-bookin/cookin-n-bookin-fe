@@ -1,6 +1,7 @@
 import { signUpUser, signInUser, signOutUser } from '../services/users';
 import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
+import toast from 'react-hot-toast';
 
 export const useAuth = () => {
   const context = useContext(UserContext);
@@ -39,6 +40,7 @@ export const useAuth = () => {
     console.log('signOut');
     const user = await signOutUser();
     setUser({});
+    toast('See you next time!');
   };
 
   return { signUp, signIn, signOut, isLoggedIn };
