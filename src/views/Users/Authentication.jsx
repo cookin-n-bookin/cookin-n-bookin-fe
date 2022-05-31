@@ -30,7 +30,7 @@ export default function Authentication({ isSigningUp }) {
             <p>Already a member?</p>
             <Link 
               to="/auth/sign_in">
-              Sign In Here
+              Sign In
             </Link>
           </> 
         : <>
@@ -39,7 +39,7 @@ export default function Authentication({ isSigningUp }) {
             <p>Not a member yet?</p>
             <Link 
               to="/auth/sign_up">
-              Sign Up Here
+              Sign Up
             </Link>
           </>
         }

@@ -22,22 +22,23 @@ export default function AuthForm({ label, onSubmit }) {
   return (
     <>
     <form
+      aria-label='form'
       onSubmit={handleSubmit}>
       <section>
-        <label>Username</label>
         <input 
           type="username"
           name="username"
+          placeholder='Username'
           required
           value={formState.username}
           onChange={handleChange}/>
       </section>
 
       <section>
-        <label>Password</label>
         <input 
           type="password"
           name="password"
+          placeholder='Password'
           required
           value={formState.password}
           onChange={handleChange}/>

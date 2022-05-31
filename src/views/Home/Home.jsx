@@ -7,7 +7,7 @@ export default function Home() {
   
   return (
     <>
-      <div>Home</div>
+      <h1>Home</h1>
       {/* <button type="button" onClick={signOut}>
         Sign out
       </button> */}
