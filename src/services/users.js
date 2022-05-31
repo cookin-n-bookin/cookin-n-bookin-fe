@@ -20,7 +20,6 @@ export async function signUpUser(username, password) {
   });
 
   if (!res.ok) throw new Error('Invalid username/password');
-
   return res.json();
 }
 

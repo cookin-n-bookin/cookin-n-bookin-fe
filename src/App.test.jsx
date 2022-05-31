@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
+import { server } from './setupTests';
 import Authentication from './views/Users/Authentication';
 import App from './App';
 
@@ -29,18 +30,49 @@ describe('App.jsx tests', () => {
       name: /sign up/i,
     });
     expect(signUpHeader).toBeInTheDocument();
-    console.log('signUpHeader', signUpHeader);
 
-    const usernameInput = screen.getByPlaceholderText('Username');
-    userEvent.type(usernameInput, 'TestName');
+    const signUpUsernameInput = screen.getByPlaceholderText('Username');
+    userEvent.type(signUpUsernameInput, 'TESTY_MCTESTERSON');
 
-    const passwordInput = screen.getByPlaceholderText('Password');
-    userEvent.type(passwordInput, 'password');
+    const signUpPasswordInput = screen.getByPlaceholderText('Password');
+    userEvent.type(signUpPasswordInput, 'password');
 
-    const submitBtn = screen.getByRole('button', { name: /submit/i });
+    const signUpSubmit = screen.getByRole('button', { name: /submit/i });
 
-    userEvent.click(submitBtn);
+    userEvent.click(signUpSubmit);
 
-    screen.debug();
+    const signUpHomeHeader = await screen.findByRole('heading', { level: 1 });
+    expect(signUpHomeHeader).toBeInTheDocument();
+
+    const signoutBtn = screen.getByRole('button', { name: /sign out/i });
+    userEvent.click(signoutBtn);
+
+    const authPageBtn2 = await screen.findByRole('button', {
+      name: /sign in/i,
+    });
+    expect(authPageBtn2).toBeInTheDocument();
+
+    userEvent.click(authPageBtn2);
+
+    const authHeader2 = await screen.findByRole('heading', { level: 2 });
+    expect(authHeader2).toBeInTheDocument();
+
+    const signInHeader = await screen.findByRole('heading', {
+      name: /sign in/i,
+    });
+    expect(signInHeader).toBeInTheDocument();
+
+    const signInUsernameInput = screen.getByPlaceholderText('Username');
+    userEvent.type(signInUsernameInput, 'TESTY_MCTESTERSON');
+
+    const signInPasswordInput = screen.getByPlaceholderText('Password');
+    userEvent.type(signInPasswordInput, 'password');
+
+    const signInSubmit = screen.getByRole('button', { name: /submit/i });
+
+    userEvent.click(signInSubmit);
+
+    const homeHeader = await screen.findByRole('heading', { name: /home/i });
+    expect(homeHeader).toBeInTheDocument();
   });
 });
