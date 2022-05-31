@@ -1,8 +1,10 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Authentication from './views/Users/Authentication';
 import Home from './views/Home/Home';
 import Header from './components/Header/Header';
+import AddBook from './views/Books/AddBook';
 
 export default function App() {
   return (
@@ -17,6 +19,9 @@ export default function App() {
         </Route>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route exact path="/books/new">
+          <AddBook />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
