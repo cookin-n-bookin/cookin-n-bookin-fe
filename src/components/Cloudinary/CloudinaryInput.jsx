@@ -1,8 +1,6 @@
 import React from 'react'
 import { Image } from 'cloudinary-react'
 
-import useCloudinary from '../../hooks/cloudinary'
-
 export default function CloudinaryInput({ publicId, setUploadedImage, uploadImage }) {
   
   return (

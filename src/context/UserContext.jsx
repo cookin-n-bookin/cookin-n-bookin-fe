@@ -4,21 +4,19 @@ import { getUser } from '../services/users';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const currentUser = getUser();
-  const [user, setUser] = useState(currentUser || { username: null });
-  const [isLoading, setIsLoading] = useState(true)
+  const [user, setUser] = useState({ username: null });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) return null;
+    if (user.username) return;
 
     getUser()
-    .then(setUser)
-    .finally(() => setIsLoading(false));
-    
+      .then((response) => setUser(response))
+      .finally(() => setIsLoading(false));
   }, []);
-  
+
   return (
-    <UserContext.Provider value={{ user, setUser, currentUser, isLoading }}>
+    <UserContext.Provider value={{ user, setUser, isLoading }}>
       {children}
     </UserContext.Provider>
   );
