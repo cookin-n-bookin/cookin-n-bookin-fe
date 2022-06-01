@@ -1,11 +1,13 @@
 import AuthButton from '../AuthButton/AuthButton'
 import { useUser } from '../../hooks/user';
+import { useAuth } from '../../hooks/user';
 import { useState } from 'react';
 import style from './Header.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
-  const { currentUser } = useUser();
+  const { user } = useUser();
+  const { isLoggedIn } = useAuth();
   const [openNav, setOpenNav] = useState(false);
   const [closeNav, setCloseNav] = useState(true);
 
@@ -32,13 +34,22 @@ export default function Header() {
       <div className={style.sidebar}
           style={closeNav ? {width: '0px'} : {width: '250px'}}>
         <p className={style.closeBtn} onClick={handleClose}>X</p>
-        <Link>
-          <p>Home</p>
-        </Link>
-        <Link>
-          <p>About</p>
-        </Link>
-      <AuthButton />
+        {!isLoggedIn ? 
+        <><NavLink activeClassName='active' to='/books'>
+            Browse Books
+          </NavLink><AuthButton /></>  
+         : <><NavLink activeClassName='active' to='/books'>
+            Browse Books
+          </NavLink>
+            <NavLink activeClassName='active' to='/books/new'>
+              Add New Book
+            </NavLink>
+            <NavLink activeClassName='active' to={`/users/${user.id}/books`}>
+              My Shelf
+            </NavLink>
+            <AuthButton />
+          </>
+        }
       </div>
     </>
   )
