@@ -1,7 +1,7 @@
 import fetchAllBooks from '../services/books';
 import { useState } from 'react';
 
-export default function useBooks() {
+export function useBooks() {
   const [books, setBooks] = useState([]);
 
   const getAllBooks = async () => {
@@ -9,5 +9,5 @@ export default function useBooks() {
     setBooks(booksList);
   };
 
-  return { books, getAllBooks }
+  return { books, getAllBooks };
 }

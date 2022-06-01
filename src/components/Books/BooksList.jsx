@@ -1,21 +1,20 @@
 import BookItem from './BookItem';
 import { useEffect, useState } from 'react';
-import fetchAllBooks from '../../services/books';
-import { useAuth, useUser } from '../../hooks/user';
+import { useUser } from '../../hooks/user';
+import { useBooks } from '../../hooks/books';
 
 export default function BooksList() {
-  const [books, setBooks] = useState([]);
   const { isLoading, setIsLoading } = useUser();
-  const { isLoggedIn } = useAuth();
+  const { books, getAllBooks } = useBooks();
+
 
   useEffect(() => {
-    const getBooks = async () => {
+    const setBookList = async () => {
       setIsLoading(true);
-      const booksList = await fetchAllBooks();
-      setBooks(booksList);
+      await getAllBooks();
       setIsLoading(false);
     };
-    getBooks();
+    setBookList();
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
