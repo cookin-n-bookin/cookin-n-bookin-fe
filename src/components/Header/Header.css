@@ -7,9 +7,14 @@
   border: none;
 }
 
-.closeBtn {
+.sidebar .closeBtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
   cursor: pointer;
-  background-color: white;
+  color: #818181;
 }
 
 .sidebar {
@@ -25,7 +30,7 @@
   padding-top: 60px;
 }
 
-.sidebar p {
+.sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -34,6 +39,13 @@
   transition: 0.3s;
 }
 
-.sidebar p:hover {
+.sidebar a:hover {
   color: #f1f1f1;
+}
+
+.authBtn {
+  border: none;
+  color: #818181;
+  background-color: #111;
+  font-size: 25px;
 }

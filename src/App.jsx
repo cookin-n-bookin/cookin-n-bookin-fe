@@ -3,8 +3,8 @@ import { UserProvider } from './context/UserContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Authentication from './views/Users/Authentication';
 import Home from './views/Home/Home';
-import Header from './components/Header/Header';
 import AddBook from './views/Books/AddBook';
+import BookDetail from './views/Books/BookDetail';
 
 export default function App() {
   return (
@@ -24,6 +24,9 @@ export default function App() {
         </PrivateRoute>
         <Route exact path="/">
           <Redirect to="/books" />
+        </Route>
+        <Route exact path="/books/:id">
+          <BookDetail />
         </Route>
       </UserProvider>
     </Switch>
