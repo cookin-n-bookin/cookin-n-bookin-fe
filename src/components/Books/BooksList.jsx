@@ -7,7 +7,6 @@ export default function BooksList() {
   const { isLoading, setIsLoading } = useUser();
   const { books, getAllBooks } = useBooks();
 
-
   useEffect(() => {
     const setBookList = async () => {
       setIsLoading(true);

@@ -13,10 +13,22 @@ export async function addBook(title, author, publicId) {
   }
 }
 
-export default async function fetchAllBooks() {
+export async function getBookById(id) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/books/${id}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+    });
+    return res.json();
+  } catch (error) {
+    return error.message;
+  }
+}
+
+export async function fetchAllBooks() {
   const res = await fetch(`${process.env.API_URL}/api/v1/books`);
-
   const results = await res.json();
-
   return results;
 }
