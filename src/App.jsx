@@ -10,7 +10,6 @@ export default function App() {
   return (
     <Switch>
       <UserProvider>
-        <Header />
         <Route exact path="/auth/sign_in">
           <Authentication isSigningUp={false} />
         </Route>

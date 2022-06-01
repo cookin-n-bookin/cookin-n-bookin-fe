@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth, useUser } from '../../hooks/user';
 import BooksList from '../../components/Books/BooksList';
+import Header from '../../components/Header/Header';
 
 export default function Home() {
   const { signOut } = useAuth();
@@ -8,7 +9,7 @@ export default function Home() {
   
   return (
     <>
-      <h1>Home</h1>
+      <Header />
       <BooksList />
       {/* <button type="button" onClick={signOut}>
         Sign out
