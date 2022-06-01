@@ -10,11 +10,6 @@ export async function getUser() {
   }
 }
 
-export function getCookie(cname) {
-  const decodedCookie = decodeURIComponent(document.cookie);
-  console.log('cookie:', decodedCookie);
-}
-
 export async function signUpUser(username, password) {
   const res = await fetch(`${process.env.API_URL}/api/v1/users/signup`, {
     method: 'POST',

@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { getCookie, getUser } from '../services/users';
+import { getUser } from '../services/users';
 
 export const UserContext = createContext();
 
