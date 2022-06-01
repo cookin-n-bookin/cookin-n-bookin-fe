@@ -51,7 +51,7 @@ export const useUser = () => {
     throw new Error('useUser must be called within a UserProvider');
   }
 
-  const { user, setUser, isLoading } = context;
+  const { user, setUser, isLoading, setIsLoading } = context;
 
-  return { user, setUser, isLoading };
+  return { user, setUser, isLoading, setIsLoading };
 };

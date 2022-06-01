@@ -12,3 +12,11 @@ export async function addBook(title, author, publicId) {
     return error.message;
   }
 }
+
+export default async function fetchAllBooks() {
+  const res = await fetch(`${process.env.API_URL}/api/v1/books`);
+
+  const results = await res.json();
+
+  return results;
+}

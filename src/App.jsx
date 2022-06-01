@@ -10,21 +10,20 @@ export default function App() {
   return (
     <Switch>
       <UserProvider>
-        <Header />
         <Route exact path="/auth/sign_in">
           <Authentication isSigningUp={false} />
         </Route>
         <Route exact path="/auth/sign_up">
           <Authentication isSigningUp={true} />
         </Route>
-        <Route exact path="/home">
+        <Route exact path="/books">
           <Home />
         </Route>
         <PrivateRoute exact path="/books/new">
           <AddBook />
         </PrivateRoute>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/books" />
         </Route>
       </UserProvider>
     </Switch>

@@ -1,7 +1,10 @@
 export async function getUser() {
   try {
     const res = await fetch(`${process.env.API_URL}/api/v1/users/me`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
+      mode: 'cors',
     });
     const json = await res.json();
     return json;
