@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function useCloudinary() {
   const [uploadedImage, setUploadedImage] = useState('');
@@ -16,12 +17,11 @@ export default function useCloudinary() {
       body: formData,
     })
       .then((response) => {
-        console.log('response in hook', response);
         return response.json();
       })
       .then((finalRes) => {
-        console.log('finalRes', finalRes);
         setPublicId(finalRes.public_id);
+        toast('Image uploaded successfully!');
       });
   };
 

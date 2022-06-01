@@ -8,7 +8,7 @@ export default function AddBookForm({ label, onSubmit }) {
   const { formState, handleChange } = useForm({
     title: '',
     author: '',
-    image_id: publicId
+    imageId: ''
   });
 
   const [error, setError] = useState('');
@@ -18,8 +18,10 @@ export default function AddBookForm({ label, onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { title, author } = formState;
+    // console.log('imageId', imageId)
+    console.log('publicId', publicId)
     try {
-      await onSubmit(title, author);
+      await onSubmit(title, author, publicId);
     } catch (error) {
       setError(error);
     }
@@ -34,8 +36,8 @@ export default function AddBookForm({ label, onSubmit }) {
         setUploadedImage={setUploadedImage}
         uploadImage={uploadImage}
         />
-        
       </section>
+
       <form aria-label="form" onSubmit={handleSubmit}>
         <section>
           <input
@@ -58,7 +60,6 @@ export default function AddBookForm({ label, onSubmit }) {
             onChange={handleChange}
           />
         </section>
-
 
         <button 
         type="submit" 
