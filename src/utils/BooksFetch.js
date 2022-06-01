@@ -6,5 +6,7 @@ const res = await fetch(
 
 const results = await res.json();
 
+console.log('RESULTS', results);
+
 return results;
 }
