@@ -20,9 +20,9 @@ export default function App() {
         <Route exact path="/home">
           <Home />
         </Route>
-        <Route exact path="/books/new">
+        <PrivateRoute exact path="/books/new">
           <AddBook />
-        </Route>
+        </PrivateRoute>
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>

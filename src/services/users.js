@@ -3,11 +3,16 @@ export async function getUser() {
     const res = await fetch(`${process.env.API_URL}/api/v1/users/me`, {
       credentials: 'include',
     });
-
-    return res.json();
+    const json = await res.json();
+    return json;
   } catch (error) {
     return null;
   }
+}
+
+export function getCookie(cname) {
+  const decodedCookie = decodeURIComponent(document.cookie);
+  console.log('cookie:', decodedCookie);
 }
 
 export async function signUpUser(username, password) {
