@@ -9,6 +9,7 @@ export function useBooks() {
   const [bookList, setBookList] = useState([]);
   const [bookDetails, setBookDetails] = useState({});
   const [userBookList, setUserBookList] = useState([]);
+  const [bookOwners, setBookOwners] = useState([]);
 
   const getAllBooks = async () => {
     const booksList = await fetchAllBooks();
@@ -16,16 +17,18 @@ export function useBooks() {
   };
 
   const getSingleBook = async (id) => {
-    console.log('id in hook', id);
     const res = await getBookById(id);
-    console.log('response in hooks', res);
     setBookDetails(res);
   };
 
   const getUserBooks = async (id) => {
     const usersBooks = await getBooksByUserId(id);
-    console.log('usersBooks', usersBooks);
     setUserBookList(usersBooks.books);
+  };
+
+  const getBookOwners = async (id) => {
+    const book = await getBookById(id);
+    setBookOwners(book.users);
   };
 
   return {
@@ -35,5 +38,7 @@ export function useBooks() {
     getSingleBook,
     userBookList,
     getUserBooks,
+    bookOwners,
+    getBookOwners,
   };
 }
