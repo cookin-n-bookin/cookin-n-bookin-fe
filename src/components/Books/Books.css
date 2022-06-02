@@ -3,6 +3,10 @@
     --background: #cfdddc;
   }  
 
+.image {
+  height: 12rem;
+}
+
 .list {
     border: 1px red solid;
     display: flex;
@@ -12,11 +16,13 @@
 }
 
 .book {
-    border: 1px blue solid;
+    /* border: 1px blue solid; */
     cursor: pointer;
-    height: 14rem;
+    height: 18rem;
     width: 10rem;
     margin: .5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .bookTitle {
