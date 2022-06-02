@@ -10,14 +10,6 @@ import TabNavItem from './TabNavItem';
 export default function DetailTabs() {
   const [activeTab, setActiveTab] = useState('recipesTab');
 
-  // const handleRecipesTab = () => {
-  //   setActiveTab('recipesTab');
-  // };
-
-  // const handleReviewsTab = () => {
-  //   setActiveTab('reviewsTab');
-  // };
-
   return (
     <div className={styles.tabs}>
       <ul className={styles.tabNav}>
