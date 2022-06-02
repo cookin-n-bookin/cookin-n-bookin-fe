@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import styles from './StylesTab.css';
+import RecipesTab from './RecipesTab';
+import ReviewsTab from './ReviewsTab';
+import ImagesTab from './ImagesTab';
+import OwnersTab from './OwnersTab';
 import TabContent from './TabContent';
 import TabNavItem from './TabNavItem';
 
@@ -45,16 +49,16 @@ export default function DetailTabs() {
 
       <div className={styles.outlet}>
         <TabContent id="recipesTab" activeTab={activeTab}>
-          <p>working!</p>
+          <RecipesTab />
         </TabContent>
         <TabContent id="ownersTab" activeTab={activeTab}>
-          <p>working still !</p>
+          <OwnersTab />
         </TabContent>
         <TabContent id="reviewsTab" activeTab={activeTab}>
-          <p>yup!</p>
+          <ReviewsTab />
         </TabContent>
         <TabContent id="imagesTab" activeTab={activeTab}>
-          <p>wow!</p>
+          <ImagesTab />
         </TabContent>
       </div>
     </div>
