@@ -7,7 +7,7 @@ export default function BooksList({ bookList }) {
     <>
       <div className={styles.list}>
         {bookList.map((book) => {
-          return <BookItem key={book.id} book={book} />;
+          return <BookItem key={`${book.id}-${book.title}`} book={book} />;
         })}
       </div>
     </>

@@ -1,7 +1,8 @@
 import styles from './StylesTab.css';
 import { useBooks } from '../../hooks/books';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { useParams, Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { useEffect } from 'react';
+
 
 export default function OwnersTab() {
   const { bookOwners, getBookOwners } = useBooks();
@@ -19,7 +20,13 @@ export default function OwnersTab() {
 
   return (
     <div>
-      {bookOwners.map((owner) => <p>{owner.username}</p>)}
+      {bookOwners.map((owner) => 
+        <Link 
+          key={`${owner.username}-${owner.user_id}`}
+          to={`/users/${owner.user_id}/books`}
+          >
+            <p>{owner.username}</p>
+        </Link>)}
 
     </div>
   )
