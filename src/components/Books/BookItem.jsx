@@ -6,7 +6,7 @@ export default function BookItem({ book }) {
   return (
     <>
       <div className={styles.book}>
-        <Link to={`/books/${book.id}`}>
+        <Link to={`/books/${book.id || book.book_id}`}>
           <Image
             className={styles.image}
             cloudName="dwwab45mm"
