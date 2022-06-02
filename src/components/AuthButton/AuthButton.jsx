@@ -1,6 +1,6 @@
 import { useAuth } from '../../hooks/user';
 import { Link } from 'react-router-dom';
-import style from '../Header/Header.css';
+import style from '../Header/Menu.css';
 
 export default function AuthButton() {
   const { isLoggedIn, signOut } = useAuth();

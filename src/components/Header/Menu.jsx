@@ -6,29 +6,31 @@ import { useAuth } from '../../hooks/user';
 import { useState } from 'react';
 
 export default function Menu() {
-    const { user } = useUser();
-    const { isLoggedIn } = useAuth();
-    const [openNav, setOpenNav] = useState(false);
-    const [closeNav, setCloseNav] = useState(true);
+  const { user } = useUser();
+  const { isLoggedIn } = useAuth();
+  const [openNav, setOpenNav] = useState(false);
+  const [closeNav, setCloseNav] = useState(true);
+
+  function handleOpen() {
+    setOpenNav(true);
+    setCloseNav(false);
+  }
+
+  function handleClose() {
+    setCloseNav(true);
+    setOpenNav(false);
+
   
-    function handleOpen() {
-      setOpenNav(true);
-      setCloseNav(false);
-    }
-  
-    function handleClose() {
-      setCloseNav(true);
-      setOpenNav(false);
-    }
+  }
   return (
     <>
-      <div>
+      <div className={styles.menu}>
         <button
           className={styles.openMain}
           onClick={handleOpen}
           style={openNav ? { marginLeft: '250px' } : { marginLeft: '0px' }}
         >
-          ☰ Menu
+          ☰
         </button>
       </div>
       <div
@@ -39,14 +41,14 @@ export default function Menu() {
           X
         </p>
         {!isLoggedIn ? (
-          <>
+          <div className={styles.menuItems}>
             <NavLink activeClassName={styles.active} to="/books">
               Browse Books
             </NavLink>
             <AuthButton />
-          </>
+          </div>
         ) : (
-          <>
+          <div className={styles.menuItems}>
             <NavLink activeClassName={styles.active} to="/books">
               Browse Books
             </NavLink>
@@ -60,7 +62,7 @@ export default function Menu() {
               My Shelf
             </NavLink>
             <AuthButton />
-          </>
+          </div>
         )}
       </div>
     </>

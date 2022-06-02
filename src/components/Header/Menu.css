@@ -1,52 +1,68 @@
+:root {
+  --font: #001440;
+  --background: #cfdddc;
+}
+
 .openMain {
-    font-size: 20px;
+    font-size: 2rem;
     cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
+    padding-left: .5rem;
     border: none;
+    background-color: white;
+    color: var(--font);
   }
   
   .sidebar .closeBtn {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 1.5rem;
     margin-left: 50px;
+    font-family: sans-serif;
     cursor: pointer;
-    color: #818181;
+    color: var(--font);
   }
   
   .sidebar {
+    font-family: 'Nixie One', sans-serif;
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    background-color: var(--background);
   }
   
   .sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #001440;
     display: block;
     transition: 0.3s;
   }
   
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: hotpink;
   }
   
   .authBtn {
     border: none;
-    color: #818181;
-    background-color: #111;
+    color: var(--font);
+    background-color: var(--background);
     font-size: 25px;
+    font-family: 'Nixie One', sans-serif;
+    padding: 8px 8px 8px 32px;
+  }
+
+  .menuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 3rem;
   }
   
