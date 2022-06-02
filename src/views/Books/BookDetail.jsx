@@ -26,7 +26,7 @@ export default function BookDetail() {
       <Header />
       <div className={styles.bookDetail}>
           <Image
-            className={styles.image}
+            className={styles.imageDetail}
             cloudName="dwwab45mm"
             publicId={bookDetails.imageId}
           />

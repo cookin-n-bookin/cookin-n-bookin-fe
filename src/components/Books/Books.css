@@ -7,6 +7,10 @@
   height: 12rem;
 }
 
+.imageDetail {
+  height: 17rem;
+}
+
 .list {
     border: 1px red solid;
     display: flex;
@@ -47,8 +51,8 @@ a:link {
   }
 
 .bookDetail {
-    border: red 1px solid;
     display: grid;
-    grid: 1fr / 1fr 1fr;
+    grid: 1fr / 1fr .5fr;
     height: 18rem;
+    margin: 1rem 1rem 0rem 1rem; 
 }
