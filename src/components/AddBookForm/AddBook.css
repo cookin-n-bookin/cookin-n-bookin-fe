@@ -1,0 +1,36 @@
+:root {
+    --font: #001440;
+    --background: #cfdddc;
+  }  
+
+
+.addContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 1rem;
+
+}
+
+.addForm input {
+    margin: .5rem 0rem;
+    padding: .25rem;
+    font-family: 'Nixie One', sans-serif;
+    border: var(--font) .05rem solid;
+}
+
+.addForm button {
+    background-color: rgb(153, 186, 246);
+    border: none;
+    padding: .25rem;
+    cursor: pointer;
+    color: var(--font);
+    font-family: 'Nixie One', sans-serif;
+}
+
+.addBookHeader {
+  background: linear-gradient(to left, #f7ebe6, #dae7f6, #fcfce7);;
+  font-family: 'Nixie One', sans-serif;
+  padding: .25rem;
+  padding-left: 1rem;
+}

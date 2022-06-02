@@ -1,5 +1,6 @@
 import AddBookForm from '../../components/AddBookForm/AddBookForm';
 import Header from '../../components/Header/Header';
+import styles from '../../components/AddBookForm/AddBook.css';
 
 import toast from 'react-hot-toast';
 import { addBook } from '../../services/books';
@@ -17,7 +18,7 @@ export default function AddBook() {
   return (
     <div>
       <Header />
-      <h2>Add Book</h2>
+      <p className={styles.addBookHeader}>Add a Book to Your Shelf</p>
       <AddBookForm onSubmit={handleAddBook} />
     </div>
   );
