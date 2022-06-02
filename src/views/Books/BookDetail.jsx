@@ -11,7 +11,6 @@ export default function BookDetail() {
   const { bookDetails, getSingleBook } = useBooks();
   const { id } = useParams();
   const { setIsLoading } = useUser();
-  console.log('book in detail page', bookDetails)
 
   useEffect(() => {
     const getBookDetails = async () => {

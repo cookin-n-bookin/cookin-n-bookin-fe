@@ -11,13 +11,13 @@ export default function Authentication({ isSigningUp }) {
 
   const handleSignUp = async (username, password) => {
     await signUp(username, password);
-    history.replace('/books');
+    history.replace('/home');
     toast(`Thanks for joining, ${username}!`)
   }
 
   const handleSignIn  = async (username, password) => {
     await signIn(username, password);
-    history.replace('/books');
+    history.replace('/home');
     toast(`Welcome back, ${username}!`)
   } 
 

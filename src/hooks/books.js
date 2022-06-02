@@ -1,9 +1,14 @@
-import { fetchAllBooks, getBookById } from '../services/books';
+import {
+  fetchAllBooks,
+  getBookById,
+  getBooksByUserId,
+} from '../services/books';
 import { useState } from 'react';
 
 export function useBooks() {
   const [bookList, setBookList] = useState([]);
   const [bookDetails, setBookDetails] = useState({});
+  const [userBookList, setUserBookList] = useState([]);
 
   const getAllBooks = async () => {
     const booksList = await fetchAllBooks();
@@ -17,5 +22,18 @@ export function useBooks() {
     setBookDetails(res);
   };
 
-  return { bookList, getAllBooks, bookDetails, getSingleBook };
+  const getUserBooks = async (id) => {
+    const usersBooks = await getBooksByUserId(id);
+    console.log('usersBooks', usersBooks);
+    setUserBookList(usersBooks.books);
+  };
+
+  return {
+    bookList,
+    getAllBooks,
+    bookDetails,
+    getSingleBook,
+    userBookList,
+    getUserBooks,
+  };
 }

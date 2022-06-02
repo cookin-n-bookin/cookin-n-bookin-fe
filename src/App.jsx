@@ -5,6 +5,7 @@ import Authentication from './views/Users/Authentication';
 import Home from './views/Home/Home';
 import AddBook from './views/Books/AddBook';
 import BookDetail from './views/Books/BookDetail';
+import UsersBooks from './views/Books/UsersBooks';
 
 export default function App() {
   return (
@@ -28,6 +29,9 @@ export default function App() {
         <Route exact path="/books/:id">
           <BookDetail />
         </Route>
+        <PrivateRoute exact path="/users/:id/books">
+          <UsersBooks />
+        </PrivateRoute>
       </UserProvider>
     </Switch>
   );
