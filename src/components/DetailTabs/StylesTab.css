@@ -42,7 +42,8 @@ ul.tabNav li.active {
   background: #39a2db;
 }
 
-.recipesTab p {
+.recipesTab p,
+.reviewsTab p {
   font-size: 2rem;
   text-align: center;
 }

@@ -4,7 +4,7 @@ import styles from './StylesTab.css'
 export default function RecipesTab() {
   return (
     <div className={styles.recipesTab}>
-      RecipesTab
+      <p>recipes here</p>
     </div>
   )
 }
