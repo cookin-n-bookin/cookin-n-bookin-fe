@@ -5,7 +5,7 @@ export default function AuthForm({ label, onSubmit }) {
   const { formState, handleChange} = useForm({
     username: '',
     password: ''
-  })
+  });
   
   const [error, setError] = useState('');
 

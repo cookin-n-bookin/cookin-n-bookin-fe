@@ -5,10 +5,11 @@ import {
   insertRecipe,
 } from '../services/recipes';
 
-export default function recipes() {
+export function useRecipes() {
     const [recipes, setRecipes] = useState([]);
     const [updatedRecipe, setUpdatedRecipe] = useState({});
     const [newRecipe, setNewRecipe] = useState({});
+    const [isAddingRecipe, setIsAddingRecipe] = useState(false);
 
     const getAllRecipes = async () => {
         const fetchedRecipes = await fetchAllRecipes();
@@ -20,7 +21,7 @@ export default function recipes() {
         setUpdatedRecipe(edited);
     };
 
-    const addedRecipe = async () => {
+    const addRecipe = async () => {
         const added = await insertRecipe();
         setNewRecipe(added);
     }
@@ -31,6 +32,8 @@ export default function recipes() {
       newRecipe,
       getAllRecipes,
       editRecipe,
-      addedRecipe,
+      addRecipe,
+      isAddingRecipe,
+      setIsAddingRecipe
   };
 }

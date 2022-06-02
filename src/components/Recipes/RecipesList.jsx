@@ -1,25 +1,23 @@
-import { useState, useEffect } from 'react';
-import { useUser } from '../../hooks/user';
-import { fetchAllRecipes } from '../../services/recipes';
+import { useEffect } from 'react';
+import { useRecipes } from '../../hooks/recipes';
 
 export default function RecipesList() {
-  const { recipes, setRecipes } = useState();
-  const { setIsLoading } = useUser();
+    const { recipes, getAllRecipes } = useRecipes();
+
 
   useEffect(() => {
-    const getRecipes = async () => {
-      setIsLoading(true);
-      await fetchAllRecipes();
-      setIsLoading(false);
+    if (!recipes.length) return null;
+    const fetchRecipes = async () => {
+      await getAllRecipes();
     };
-    getRecipes();
+    fetchRecipes();
   }, []);
 
 
   return (
     <>
       <div>RecipesList</div>
-      {/* <div>
+      <div>
         {recipes.map((recipe) => {
           return (
             <div>
@@ -28,7 +26,7 @@ export default function RecipesList() {
             </div>
           );
         })}
-      </div> */}
+      </div>
     </>
   );
 }
