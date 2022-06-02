@@ -2,8 +2,9 @@ import AuthButton from '../AuthButton/AuthButton';
 import { useUser } from '../../hooks/user';
 import { useAuth } from '../../hooks/user';
 import { useState } from 'react';
-import style from './Header.css';
+import styles from './Header.css';
 import { NavLink } from 'react-router-dom';
+import Title from './Title';
 
 export default function Header() {
   const { user } = useUser();
@@ -23,9 +24,10 @@ export default function Header() {
 
   return (
     <>
+    
       <div>
         <button
-          className={style.openMain}
+          className={styles.openMain}
           onClick={handleOpen}
           style={openNav ? { marginLeft: '250px' } : { marginLeft: '0px' }}
         >
@@ -33,34 +35,35 @@ export default function Header() {
         </button>
       </div>
       <div
-        className={style.sidebar}
+        className={styles.sidebar}
         style={closeNav ? { width: '0px' } : { width: '250px' }}
       >
-        <p className={style.closeBtn} onClick={handleClose}>
+        <p className={styles.closeBtn} onClick={handleClose}>
           X
         </p>
         {!isLoggedIn ? (
           <>
-            <NavLink activeClassName={style.active} to="/books">
+            <NavLink activeClassName={styles.active} to="/books">
               Browse Books
             </NavLink>
             <AuthButton />
           </>
         ) : (
           <>
-            <NavLink activeClassName={style.active} to="/books">
+            <NavLink activeClassName={styles.active} to="/books">
               Browse Books
             </NavLink>
-            <NavLink activeClassName={style.active} to="/books/new">
+            <NavLink activeClassName={styles.active} to="/books/new">
               Add New Book
             </NavLink>
-            <NavLink activeClassName={style.active} to={`/users/${user.id}/books`}>
+            <NavLink activeClassName={styles.active} to={`/users/${user.id}/books`}>
               My Shelf
             </NavLink>
             <AuthButton />
           </>
         )}
       </div>
+     <Title />
     </>
   );
 }

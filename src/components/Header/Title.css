@@ -1,0 +1,11 @@
+.title{
+    font-family: 'Oi', sans-serif;
+    text-transform: capitalize;
+    font-size: 3rem;
+  }
+  
+  .title p {
+    padding: 0;
+    margin: 0;
+  }
+  
