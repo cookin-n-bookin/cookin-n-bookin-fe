@@ -10,22 +10,22 @@ import UsersBooks from './views/Books/UsersBooks';
 export default function App() {
   return (
     
-      <UserProvider>
-        <Switch>
+    <UserProvider>
+    <Switch>
         <Route exact path="/auth/sign_in">
           <Authentication isSigningUp={false} />
         </Route>
         <Route exact path="/auth/sign_up">
           <Authentication isSigningUp={true} />
         </Route>
-        <Route exact path="/books">
+        <Route exact path="/home">
           <Home />
         </Route>
-        <PrivateRoute exact path="/books/new">
+        <PrivateRoute exact path="/add">
           <AddBook />
         </PrivateRoute>
         <Route exact path="/">
-          <Redirect to="/books" />
+          <Redirect to="/home" />
         </Route>
         <Route exact path="/books/:id">
           <BookDetail />
