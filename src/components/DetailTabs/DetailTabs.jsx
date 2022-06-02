@@ -1,35 +1,61 @@
 import { useState } from 'react';
 import styles from './StylesTab.css';
-import RecipesTab from './RecipesTab';
-import ReviewsTab from './ReviewsTab';
+import TabContent from './TabContent';
+import TabNavItem from './TabNavItem';
 
 export default function DetailTabs() {
   const [activeTab, setActiveTab] = useState('recipesTab');
 
-  const handleRecipesTab = () => {
-    setActiveTab('recipesTab');
-  };
+  // const handleRecipesTab = () => {
+  //   setActiveTab('recipesTab');
+  // };
 
-  const handleReviewsTab = () => {
-    setActiveTab('reviewsTab');
-  };
+  // const handleReviewsTab = () => {
+  //   setActiveTab('reviewsTab');
+  // };
 
   return (
     <div className={styles.tabs}>
       <ul className={styles.tabNav}>
-        <li
-          className={`${activeTab === 'recipesTab' ? `${styles.active}` : ''}`}
-        >
-          Recipes
-        </li>
-        <li className={`${activeTab === 'reviewsTab' ? `${styles.active}` : ''}`}>
-          Current Owners
-        </li>
-        <li>Reviews</li>
-        <li>Images</li>
+        <TabNavItem
+          title="Recipes"
+          id="recipesTab"
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        <TabNavItem
+          title="Current Owners"
+          id="ownersTab"
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        <TabNavItem
+          title="Review"
+          id="reviewsTab"
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
+        <TabNavItem
+          title="Images"
+          id="imagesTab"
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+        />
       </ul>
+
       <div className={styles.outlet}>
-       {activeTab === 'recipesTab' ? <RecipesTab /> : <ReviewsTab />}
+        <TabContent id="recipesTab" activeTab={activeTab}>
+          <p>working!</p>
+        </TabContent>
+        <TabContent id="ownersTab" activeTab={activeTab}>
+          <p>working still !</p>
+        </TabContent>
+        <TabContent id="reviewsTab" activeTab={activeTab}>
+          <p>yup!</p>
+        </TabContent>
+        <TabContent id="imagesTab" activeTab={activeTab}>
+          <p>wow!</p>
+        </TabContent>
       </div>
     </div>
   );
