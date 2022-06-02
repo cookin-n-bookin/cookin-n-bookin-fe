@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import styles from './StylesTab.css';
+import RecipesTab from './RecipesTab';
+import ReviewsTab from './ReviewsTab';
 
 export default function DetailTabs() {
-  const [activeTab, setActiveTab] = useState('recipeTab');
+  const [activeTab, setActiveTab] = useState('recipesTab');
+
+  const handleRecipesTab = () => {
+    setActiveTab('recipesTab');
+  };
+
+  const handleReviewsTab = () => {
+    setActiveTab('reviewsTab');
+  };
 
   return (
     <div className={styles.tabs}>
       <ul className={styles.tabNav}>
         <li
-          className={`${activeTab === 'recipeTab' ? `${styles.active}` : ''}`}
+          className={`${activeTab === 'recipesTab' ? `${styles.active}` : ''}`}
         >
           Recipes
         </li>
@@ -18,7 +28,9 @@ export default function DetailTabs() {
         <li>Reviews</li>
         <li>Images</li>
       </ul>
-      <div className={styles.outlet}></div>
+      <div className={styles.outlet}>
+       {activeTab === 'recipesTab' ? <RecipesTab /> : <ReviewsTab />}
+      </div>
     </div>
   );
 }
