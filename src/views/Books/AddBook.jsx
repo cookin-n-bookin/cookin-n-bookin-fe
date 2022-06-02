@@ -1,5 +1,6 @@
 import React from 'react';
 import AddBookForm from '../../components/AddBookForm/AddBookForm';
+import Header from '../../components/Header/Header';
 
 import toast from 'react-hot-toast';
 import { addBook } from '../../services/books';
@@ -16,6 +17,7 @@ export default function AddBook() {
 
   return (
     <div>
+      <Header />
       <h2>Add Book</h2>
       <AddBookForm onSubmit={handleAddBook} />
     </div>

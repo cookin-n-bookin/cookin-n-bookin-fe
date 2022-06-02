@@ -1,3 +1,4 @@
+import DetailTabs from '../../components/DetailTabs/DetailTabs';
 import Header from '../../components/Header/Header';
 import { useBooks } from '../../hooks/books';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
@@ -22,10 +23,14 @@ export default function BookDetail() {
   
   return (
       <>
+
       <Header />
       <div>BookDetail
         <p>{bookDetails.title}</p>
-      </div>
+      </div>     
+      <h3>Book Details Go Here! </h3>
+      <DetailTabs />
+
       </>
     
   )
