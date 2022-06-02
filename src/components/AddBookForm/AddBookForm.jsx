@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import useForm from '../../hooks/useForm';
 import CloudinaryInput from '../Cloudinary/CloudinaryInput';
-import { Image } from 'cloudinary-react'
-import useCloudinary from '../../hooks/cloudinary'
+// import { Image } from 'cloudinary-react'
+import useCloudinary from '../../hooks/cloudinary';
+
 
 export default function AddBookForm({ label, onSubmit }) {
   const { formState, handleChange } = useForm({

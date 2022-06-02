@@ -15,12 +15,12 @@ export async function addBook(title, author, publicId) {
 
 export async function getBookById(id) {
   try {
-    const res = await fetch(`${process.env.API_URL}/books/${id}`, {
+    const res = await fetch(`${process.env.API_URL}/api/v1/books/${id}`, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
       mode: 'cors',
     });
+    console.log('response from fetch', res);
     return res.json();
   } catch (error) {
     return error.message;

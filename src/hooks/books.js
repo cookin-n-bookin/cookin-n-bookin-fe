@@ -2,18 +2,20 @@ import { fetchAllBooks, getBookById } from '../services/books';
 import { useState } from 'react';
 
 export function useBooks() {
-  const [books, setBooks] = useState([]);
-  const [book, setBook] = useState({});
+  const [bookList, setBookList] = useState([]);
+  const [bookDetails, setBookDetails] = useState({});
 
   const getAllBooks = async () => {
     const booksList = await fetchAllBooks();
-    setBooks(booksList);
+    setBookList(booksList);
   };
 
   const getSingleBook = async (id) => {
+    console.log('id in hook', id);
     const res = await getBookById(id);
-    setBook(res);
+    console.log('response in hooks', res);
+    setBookDetails(res);
   };
 
-  return { books, getAllBooks, book, getSingleBook };
+  return { bookList, getAllBooks, bookDetails, getSingleBook };
 }

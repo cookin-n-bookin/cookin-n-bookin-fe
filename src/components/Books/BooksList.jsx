@@ -5,7 +5,7 @@ import { useBooks } from '../../hooks/books';
 
 export default function BooksList() {
   const { isLoading, setIsLoading } = useUser();
-  const { books, getAllBooks } = useBooks();
+  const { bookList, getAllBooks } = useBooks();
 
   useEffect(() => {
     const setBookList = async () => {
@@ -22,7 +22,7 @@ export default function BooksList() {
     <>
       <h3>Books List</h3>
       <div>
-        {books.map((book) => {
+        {bookList.map((book) => {
           return <BookItem key={book.id} book={book} />;
         })}
       </div>
