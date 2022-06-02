@@ -1,7 +1,8 @@
 import BookItem from './BookItem';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useUser } from '../../hooks/user';
 import { useBooks } from '../../hooks/books';
+import styles from './Books.css';
 
 export default function BooksList() {
   const { isLoading, setIsLoading } = useUser();
@@ -21,7 +22,7 @@ export default function BooksList() {
   return (
     <>
       <h3>Books List</h3>
-      <div>
+      <div className={styles.list}>
         {bookList.map((book) => {
           return <BookItem key={book.id} book={book} />;
         })}

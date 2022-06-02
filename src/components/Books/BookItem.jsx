@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
+import styles from './Books.css';
 
 export default function BookItem({ book }) {
   return (
     <>
-    <div>
+      <div className={styles.book}>
         <Link to={`/books/${book.id}`}>
-        <Image 
-            style={{ width: 200 }}
-            cloudName="dwwab45mm" 
+          <Image
+            className={styles.image}
+            cloudName="dwwab45mm"
             publicId={book.imageId}
           />
-            <h4>{book.title}</h4>
-            <p>{book.author}</p>
+          <h1 className={styles.bookTitle}>{book.title}</h1>
+          <p className={styles.author}>{book.author}</p>
         </Link>
-    </div>
+      </div>
     </>
-  )
+  );
 }

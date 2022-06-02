@@ -1,0 +1,41 @@
+:root {
+    --font: #001440;
+    --background: #cfdddc;
+  }  
+
+.list {
+    border: 1px red solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    border: 1px blue solid;
+    cursor: pointer;
+    height: 14rem;
+    width: 10rem;
+    margin: .5rem;
+}
+
+.bookTitle {
+    font-family: 'Nixie One', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.author {
+    font-family: 'Nixie One', sans-serif;
+    font-size: .9rem;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--font);
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: var(--font);
+  }
