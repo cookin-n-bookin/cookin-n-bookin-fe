@@ -17,27 +17,28 @@ export default function BookDetail() {
       setIsLoading(true);
       await getSingleBook(id);
       setIsLoading(false);
-    }
+    };
     getBookDetails();
-  }, [])
-  
+  }, []);
+
   return (
-      <>
+    <>
       <Header />
       <div className={styles.bookDetail}>
+        <div>
           <Image
             className={styles.imageDetail}
             cloudName="dwwab45mm"
             publicId={bookDetails.imageId}
           />
-         <div>
-         <h1 className={styles.bookTitle}>{bookDetails.title}</h1>
+        </div>
+        <div>
+          <h1 className={styles.bookTitle}>{bookDetails.title}</h1>
           <p className={styles.author}>{bookDetails.author}</p>
           <p>update button here</p>
-         </div>
-      </div>    
+        </div>
+      </div>
       <DetailTabs />
-      </>
-    
-  )
+    </>
+  );
 }
