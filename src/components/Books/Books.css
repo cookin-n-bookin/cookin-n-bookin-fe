@@ -39,3 +39,10 @@ a:link {
     text-decoration: none;
     color: var(--font);
   }
+
+.bookDetail {
+    border: red 1px solid;
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    height: 18rem;
+}

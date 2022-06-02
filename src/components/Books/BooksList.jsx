@@ -5,7 +5,7 @@ import { useBooks } from '../../hooks/books';
 import styles from './Books.css';
 
 export default function BooksList() {
-  const { isLoading, setIsLoading } = useUser();
+  const { setIsLoading } = useUser();
   const { bookList, getAllBooks } = useBooks();
 
   useEffect(() => {
@@ -16,8 +16,6 @@ export default function BooksList() {
     };
     setBookList();
   }, []);
-
-  if (isLoading) return <p>Loading...</p>;
 
   return (
     <>

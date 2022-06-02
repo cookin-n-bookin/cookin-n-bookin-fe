@@ -65,4 +65,9 @@
     align-items: flex-start;
     margin-top: 3rem;
   }
+
+  .active {
+    color: white !important;
+    font-style: italic;
+  }
   
