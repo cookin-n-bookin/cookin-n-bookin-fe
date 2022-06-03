@@ -6,4 +6,14 @@
 .faq {
   color: var(--font);
   font-family: 'Nixie One', sans-serif;
+  margin: 6rem 1rem 0rem 1rem;
+}
+
+.faqSubHeader {
+  font-family: 'Nixie One', sans-serif;
+  padding: 0.25rem;
+  float: right;
+  padding-right: 1rem;
+  font-size: .6rem;
+  color: var(--font);
 }

@@ -28,7 +28,7 @@ export default function RecipesList() {
       <div className={styles.recipes}>
         {filteredRecipes.map((recipe) => {
           return (
-            <div key={`${recipe.id}-${recipe.title}`}>
+            <div className={styles.recipe} key={`${recipe.id}-${recipe.title}`}>
               <h1 className={styles.recipeTitle}>{recipe.title}</h1>
               <p>Page {recipe.pageNumber}</p>
               <div className={styles.recipeTabs}>

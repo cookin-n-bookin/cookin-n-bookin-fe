@@ -8,7 +8,6 @@ export default function AddBookForm({ label, onSubmit }) {
   const { formState, handleChange } = useForm({
     title: '',
     author: '',
-    // imageId: '',
   });
 
   const [error, setError] = useState('');
@@ -29,6 +28,7 @@ export default function AddBookForm({ label, onSubmit }) {
     <>
       <div className={styles.addContainer}>
         <section>
+          <p className={styles.coverInfo}>Upload Your Cover Image</p>
           <CloudinaryInput
             publicId={publicId}
             setUploadedImage={setUploadedImage}
