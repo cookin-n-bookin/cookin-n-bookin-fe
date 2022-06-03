@@ -1,0 +1,138 @@
+:root {
+  --font: #001440;
+  --background: #cfdddc;
+}
+
+.image {
+  height: 12rem;
+}
+
+.imageDetail {
+  height: 17rem;
+}
+
+.listContainer {
+  margin-left: 1.2rem;
+}
+
+.list {
+  /* border: 1px red solid; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.book {
+  cursor: pointer;
+  height: 17.5rem;
+  width: 10rem;
+  margin: .5rem .5rem 3rem .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookTitle {
+  font-family: 'Nixie One', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.author {
+  font-family: 'Nixie One', sans-serif;
+  font-size: 0.9rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--font);
+}
+
+a:visited {
+  text-decoration: none;
+  color: var(--font);
+}
+
+.bookDetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.bookData {
+  margin-left: 1rem;
+}
+
+.addButton {
+  border: var(--font) 0.05rem solid;
+  background-color: white;
+  font-family: 'Nixie One', sans-serif;
+  color: var(--font);
+  padding: 0.2rem;
+  width: 6.5rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.mainShelf, .userShelf {
+  font-family: 'Nixie One', sans-serif;
+  text-transform: capitalize;
+  padding: 0.25rem;
+  float: right !important;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.noBooks {
+  margin-top: 7rem;
+  text-align: center;
+  font-family: 'Nixie One', sans-serif;
+  padding: 0rem 1rem;
+
+}
+
+
+@media only screen and (min-width: 750px) {
+  .listContainer {
+    margin-left: 5rem;
+  }
+
+  .bookDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .bookData {
+    margin-left: 4rem;
+  }
+
+  .imageDetail {
+    height: 20rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .listContainer {
+    margin-left: 5rem;
+  }
+
+  .bookDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .bookData {
+    margin-left: 4rem;
+  }
+
+  .imageDetail {
+    height: 23rem;
+  }
+}
