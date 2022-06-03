@@ -21,7 +21,7 @@ export default function AddBook() {
   return (
     <div>
       <Header />
-      <p className={styles.addBookHeader}>Add a Book to Your Shelf</p>
+      <h1 className={styles.addBookHeader}>Add a Book to Your Shelf</h1>
       <AddBookForm onSubmit={handleAddBook} />
     </div>
   );
