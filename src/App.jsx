@@ -12,14 +12,14 @@ export default function App() {
     
     <UserProvider>
     <Switch>
-        <Route exact path="/home">
+        <Route exact path="/books">
           <Home />
         </Route>
-        <PrivateRoute exact path="/add">
+        <PrivateRoute exact path="/books/new">
           <AddBook />
         </PrivateRoute>
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/books" />
         </Route>
         <Route exact path="/books/:id">
           <BookDetail />
