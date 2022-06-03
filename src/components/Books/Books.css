@@ -53,7 +53,7 @@ a:visited {
 
 .bookDetail {
   display: grid;
-  grid: 1fr / 1fr 0.5fr;
+  grid: 1fr / 1fr 0.45fr;
   height: 18rem;
   margin: 1rem 1rem 0rem 1rem;
 }
@@ -76,4 +76,12 @@ a:visited {
   float: right !important;
   padding-right: 1rem;
   font-size: 1.2rem;
+}
+
+.noBooks {
+  margin-top: 7rem;
+  text-align: center;
+  font-family: 'Nixie One', sans-serif;
+  padding: 0rem 1rem;
+
 }

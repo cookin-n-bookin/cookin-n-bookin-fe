@@ -5,10 +5,9 @@ import AddRecipeForm from '../Recipes/AddRecipeForm';
 import { useAuth } from '../../hooks/user';
 import { insertRecipe } from '../../services/recipes';
 import toast from 'react-hot-toast';
-import { useParams, useHistory } from 'react-router-dom';
 
 export default function RecipesTab() {
-  const { isAddingRecipe, setIsAddingRecipe, addRecipe} = useRecipes();
+  const { isAddingRecipe, setIsAddingRecipe } = useRecipes();
   
 
   const { isLoggedIn } = useAuth();
@@ -34,9 +33,9 @@ export default function RecipesTab() {
 
   return (
     <div className={styles.recipesTab}>
-      { isLoggedIn ? (<button onClick={handleClick}>Add Recipe</button>) : ('')
-      }
       <RecipesList />
+      { isLoggedIn ? (<button className={styles.addRecipeButton} onClick={handleClick}>Add Recipe</button>) : ('')
+      }
     </div>
   )
 }

@@ -5,6 +5,7 @@
 .recipeTitle {
     font-size: 1rem;
     font-style: italic;
+    text-transform: capitalize;
 }
 
 .recipeTabs {
@@ -15,4 +16,8 @@
 .recipeTabs p {
     margin-right: 1rem;
     cursor: pointer;
+}
+
+.recipe {
+    margin-bottom: 1rem;
 }
