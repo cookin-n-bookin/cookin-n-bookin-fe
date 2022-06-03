@@ -31,7 +31,7 @@ export default function UsersBooks() {
       <BooksList bookList={userBookList}/>
       </>
       : ( <>
-            <p>You haven't added any books to your shelf yet!</p>
+            <p className={styles.noBooks}>You haven't added any books to your shelf yet!</p>
           </>)
         }
     </div>

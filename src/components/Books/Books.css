@@ -77,3 +77,11 @@ a:visited {
   padding-right: 1rem;
   font-size: 1.2rem;
 }
+
+.noBooks {
+  margin-top: 7rem;
+  text-align: center;
+  font-family: 'Nixie One', sans-serif;
+  padding: 0rem 1rem;
+
+}

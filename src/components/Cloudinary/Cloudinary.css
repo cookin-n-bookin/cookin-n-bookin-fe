@@ -1,5 +1,5 @@
 .upload button {
-    background-color: rgb(153, 186, 246);
+    background-color: rgb(251, 246, 196);
     border: none;
     padding: .25rem;
     cursor: pointer;
@@ -14,8 +14,11 @@
     align-items: center;
 }
 
-.cloudinary-button {
-    color: pink;
-  }
-  
+.upload input {
+    background-color: rgb(251, 246, 196);
+    font-family: 'Nixie One', sans-serif;
+    width: 12rem;
+}
+
+
 
