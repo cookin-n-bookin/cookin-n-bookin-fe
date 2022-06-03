@@ -1,0 +1,24 @@
+.upload button {
+    background-color: rgb(251, 246, 196);
+    border: none;
+    padding: .25rem;
+    cursor: pointer;
+    color: var(--font);
+    font-family: 'Nixie One', sans-serif;
+    margin: .5rem 0rem;
+}
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload input {
+    background-color: rgb(251, 246, 196);
+    font-family: 'Nixie One', sans-serif;
+    width: 12rem;
+}
+
+
+

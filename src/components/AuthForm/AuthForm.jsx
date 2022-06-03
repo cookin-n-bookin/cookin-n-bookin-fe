@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import useForm from '../../hooks/useForm'
+import useForm from '../../hooks/useForm';
+import styles from './Auth.css';
 
 export default function AuthForm({ label, onSubmit }) {
   const { formState, handleChange} = useForm({
     username: '',
     password: ''
-  })
+  });
   
   const [error, setError] = useState('');
 
@@ -23,7 +24,8 @@ export default function AuthForm({ label, onSubmit }) {
     <>
     <form
       aria-label='form'
-      onSubmit={handleSubmit}>
+      onSubmit={handleSubmit}
+      className={styles.authForm}>
       <section>
         <input 
           type="username"

@@ -6,17 +6,18 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ username: null });
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     if (user.username) return;
-
     getUser()
       .then((response) => setUser(response))
+      .then(() => setIsLoggedIn(true))
       .finally(() => setIsLoading(false));
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
+    <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading, isLoggedIn, setIsLoggedIn }}>
       {children}
     </UserContext.Provider>
   );

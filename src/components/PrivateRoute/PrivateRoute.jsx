@@ -2,12 +2,10 @@ import { useLocation, Route, Redirect } from 'react-router-dom';
 import { useAuth, useUser } from '../../hooks/user';
 
 export default function PrivateRoute({ children, ...rest }) {
-  const { isLoggedIn } = useAuth();
-  const { isLoading } = useUser();
+  const { isLoggedIn, isLoading } = useAuth();
   const location = useLocation();
 
   if (isLoading) return <p>Loading....</p>;
-
   return (
     <Route {...rest}>
       {isLoggedIn ? (

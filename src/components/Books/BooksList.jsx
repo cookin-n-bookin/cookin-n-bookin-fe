@@ -1,33 +1,14 @@
 import BookItem from './BookItem';
-import { useEffect, useState } from 'react';
-import fetchAllBooks from '../../services/books';
-import { useAuth, useUser } from '../../hooks/user';
+import styles from './Books.css';
 
-export default function BooksList() {
-  const [books, setBooks] = useState([]);
-  const { isLoading, setIsLoading } = useUser();
-  const { isLoggedIn } = useAuth();
-
-  useEffect(() => {
-    const getBooks = async () => {
-      setIsLoading(true);
-      const booksList = await fetchAllBooks();
-      setBooks(booksList);
-      setIsLoading(false);
-    };
-    getBooks();
-  }, []);
-
-  if (isLoading) return <p>Loading...</p>;
-
+export default function BooksList({ bookList }) {
   return (
-    <>
-      <h3>Books List</h3>
-      <div>
-        {books.map((book) => {
-          return <BookItem key={book.id} book={book} />;
+    <div className={styles.listContainer}>
+      <div className={styles.list}>
+        {bookList.map((book) => {
+          return <BookItem key={`${book.id}-${book.title}`} book={book} />;
         })}
       </div>
-    </>
+    </div>
   );
 }
