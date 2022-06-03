@@ -33,7 +33,6 @@ export default function BookDetail() {
         <div>
           <h1 className={styles.bookTitle}>{bookDetails.title}</h1>
           <p className={styles.author}>{bookDetails.author}</p>
-          <p>update button here</p>
         </div>
       </div>
       <DetailTabs />

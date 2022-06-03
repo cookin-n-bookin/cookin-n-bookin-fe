@@ -60,7 +60,10 @@ export default function Menu() {
               to={`/users/${user.id}/books`}
             >
               My Shelf
-            </NavLink>
+              </NavLink>
+              <NavLink activeClassName={styles.active} exact to='/books/about'>
+                About Us
+              </NavLink>
             <AuthButton />
           </div>
         )}
