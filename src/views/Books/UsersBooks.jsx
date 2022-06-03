@@ -4,6 +4,7 @@ import { useBooks } from '../../hooks/books';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import styles from '../../components/Books/Books.css';
+import { useUser } from '../../hooks/user';
 
 export default function UsersBooks() {
   const { userBookList, getUserBooks } = useBooks();
@@ -23,20 +24,16 @@ export default function UsersBooks() {
   return (
     <div>
       <Header />
-
       <h1 className={styles.userShelf}>{`${user.username}'s Books`}</h1>
+      {userBookList 
+      ?
+      <>
       <BooksList bookList={userBookList}/>
-      {
-       userBookList ? (<>
-  
-            <BooksList bookList={userBookList} />
+      </>
+      : ( <>
+            <p>You haven't added any books to your shelf yet!</p>
           </>)
-        : ( <>
-              <h2>My Book Shelf</h2>
-              <p>You haven't added any books to your shelf yet!</p>
-            </>)
         }
-     
     </div>
   )
 }
