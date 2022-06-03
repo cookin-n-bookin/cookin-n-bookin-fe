@@ -1,17 +1,17 @@
 import useForm from '../../hooks/useForm';
 import { useRecipes } from '../../hooks/recipes';
 import { useState } from 'react';
-
+import { useParams } from 'react-router-dom';
 
 export default function AddRecipeForm({ label, onSubmit }) {
+  const { id } = useParams();
+  
     const { formState, handleChange } = useForm({
         title: '', 
         page_number: '',
         ingredients: '',
-        rating: ''
+        rating: '',
     });
-
-    // const { setIsAddingRecipe } = useRecipes();
 
     const [error, setError] = useState('');
 
@@ -19,7 +19,12 @@ export default function AddRecipeForm({ label, onSubmit }) {
         e.preventDefault(); 
         const { title, page_number, ingredients, rating } = formState;
         try {
-          await onSubmit(title, page_number, ingredients, rating);
+          await onSubmit(
+          title, 
+          page_number, 
+          ingredients, 
+          rating, 
+          id);
         } catch (error) {
           setError(error)
         }

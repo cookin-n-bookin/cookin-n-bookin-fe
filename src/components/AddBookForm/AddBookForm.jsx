@@ -8,7 +8,7 @@ export default function AddBookForm({ label, onSubmit }) {
   const { formState, handleChange } = useForm({
     title: '',
     author: '',
-    imageId: '',
+    // imageId: '',
   });
 
   const [error, setError] = useState('');
