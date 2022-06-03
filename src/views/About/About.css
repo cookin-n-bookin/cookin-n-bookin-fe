@@ -1,0 +1,61 @@
+:root {
+  --font: #001440;
+  --background: #cfdddc;
+}
+
+.linkedin {
+
+  cursor: pointer;
+}
+
+.linkedin, img {
+  width: 64px;
+}
+
+.github {
+  cursor: pointer;
+}
+
+.us {
+  text-align: center;
+  align-items: center;
+  font-family: 'Nixie One', sans-serif;
+
+}
+
+h2 {
+  font-family: 'Nixie One', sans-serif;
+}
+
+
+.teamContainer {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-family: 'Nixie One', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  padding: 15px;
+}
+
+.team {
+border: solid black 1px;
+width: 320px;
+height: 320px;
+justify-self: auto;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+text-align: center;
+align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
