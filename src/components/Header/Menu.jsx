@@ -42,17 +42,17 @@ export default function Menu() {
         </p>
         {!isLoggedIn ? (
           <div className={styles.menuItems}>
-            <NavLink activeClassName={styles.active} to="/books">
+            <NavLink activeClassName={styles.active} exact to="/books">
               Browse Books
             </NavLink>
             <AuthButton />
           </div>
         ) : (
           <div className={styles.menuItems}>
-            <NavLink activeClassName={styles.active} to="/books">
+            <NavLink activeClassName={styles.active} exact to="/books">
               Browse Books
             </NavLink>
-            <NavLink activeClassName={styles.active} to="/books/new">
+            <NavLink activeClassName={styles.active} exact to="/books/new">
               Add New Book
             </NavLink>
             <NavLink
