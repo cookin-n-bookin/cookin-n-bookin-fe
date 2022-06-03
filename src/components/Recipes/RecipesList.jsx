@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useRecipes } from '../../hooks/recipes';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import styles from './Recipes.css';
 
 export default function RecipesList() {
     const { recipes, getAllRecipes } = useRecipes();
@@ -19,13 +20,12 @@ export default function RecipesList() {
   
   return (
     <>
-      <div>RecipesList</div>
-      <div>
+      <div className={styles.recipes}>
         {filteredRecipes.map((recipe) => {
           return (
             <div key={`${recipe.id}-${recipe.title}`}>
-              <p>{recipe.title}</p>
-              <p>{recipe.pageNumber}</p>
+              <h1 className={styles.recipeTitle}>{recipe.title}</h1>
+              <p>Page {recipe.pageNumber}</p>
             </div>
           );
         })}
