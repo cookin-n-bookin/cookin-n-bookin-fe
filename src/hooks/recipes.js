@@ -16,14 +16,14 @@ export function useRecipes() {
     setRecipes(fetchedRecipes);
   };
 
+  const addRecipe = async (title, page_number, ingredients, rating) => {
+    const added = await insertRecipe(title, page_number, ingredients, rating);
+    setNewRecipe(added);
+  };
+
   const editRecipe = async (id) => {
     const edited = await updateRecipeById(id);
     setUpdatedRecipe(edited);
-  };
-
-  const addRecipe = async () => {
-    const added = await insertRecipe();
-    setNewRecipe(added);
   };
 
   return {

@@ -21,12 +21,26 @@ export async function updateRecipeById(id) {
   }
 }
 
-export async function insertRecipe() {
+export async function insertRecipe(
+  title,
+  page_number,
+  ingredients,
+  rating,
+  book_id
+) {
   try {
     const res = await fetch(`${process.env.API_URL}/api/v1/recipes/`, {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
       mode: 'cors',
+      body: JSON.stringify({
+        title,
+        pageNumber: page_number,
+        ingredients,
+        rating,
+        bookId: book_id,
+      }),
     });
     return res.json();
   } catch (error) {
