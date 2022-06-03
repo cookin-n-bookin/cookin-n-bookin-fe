@@ -38,3 +38,11 @@ ul.tabNav li.active {
   font-size: .9rem;
   margin-left: 1rem;
 }
+
+.addRecipeButton {
+  background-color: rgb(251, 246, 196);
+  border: none;
+  padding: .5rem;
+  font-family: 'Nixie One', sans-serif;
+  color: var(--font);
+}
