@@ -19,16 +19,22 @@ export default function BookItem({ book }) {
         <p>Loading...</p>
       ) : (
         <div className={styles.book}>
-          <Link to={`/books/${book.id || book.book_id}`}>
-            <Image
-              className={styles.image}
-              cloudName="dwwab45mm"
-              publicId={book.imageId || book.image_id}
-            />
+          <div>
+            <Link to={`/books/${book.id || book.book_id}`}>
+              <Image
+                className={styles.image}
+                cloudName="dwwab45mm"
+                publicId={book.imageId || book.image_id}
+              />
+            </Link>
+          </div>
+          <div>
             <h1 className={styles.bookTitle}>{book.title}</h1>
             <p className={styles.author}>{book.author}</p>
-          </Link>
-          <button className={styles.addButton} onClick={handleClick}>Add to My Shelf</button>
+            <button className={styles.addButton} onClick={handleClick}>
+              Add to My Shelf
+            </button>
+          </div>
         </div>
       )}
     </>
