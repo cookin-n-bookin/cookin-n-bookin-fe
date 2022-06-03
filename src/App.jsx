@@ -12,12 +12,6 @@ export default function App() {
     
     <UserProvider>
     <Switch>
-        <Route exact path="/auth/sign_in">
-          <Authentication isSigningUp={false} />
-        </Route>
-        <Route exact path="/auth/sign_up">
-          <Authentication isSigningUp={true} />
-        </Route>
         <Route exact path="/home">
           <Home />
         </Route>
@@ -33,8 +27,14 @@ export default function App() {
         <PrivateRoute exact path="/users/:id/books">
           <UsersBooks />
         </PrivateRoute>
+        <Route exact path="/auth/sign_in">
+          <Authentication isSigningUp={false} />
+        </Route>
+        <Route exact path="/auth/sign_up">
+          <Authentication isSigningUp={true} />
+        </Route>
         </Switch>
       </UserProvider>
-   
+
   );
 }

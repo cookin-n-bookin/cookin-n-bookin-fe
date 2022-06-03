@@ -5,15 +5,17 @@ import toast from 'react-hot-toast';
 
 export const useAuth = () => {
   const context = useContext(UserContext);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   if (context === undefined) {
     throw new Error('useAuth must be called within a UserProvider');
   }
 
-  const { user, setUser } = context;
+  const { user, setUser, isLoading, setIsLoading, isLoggedIn, setIsLoggedIn } =
+    context;
 
   useEffect(() => {
+    console.log('!!user.username', !!user.username);
+    console.log('user', user);
     setIsLoggedIn(!!user.username);
   }, [user.username]);
 
@@ -41,7 +43,8 @@ export const useAuth = () => {
     toast('See you next time!');
   };
 
-  return { signUp, signIn, signOut, isLoggedIn };
+  // if (isLoading) return null;
+  return { signUp, signIn, signOut, isLoggedIn, isLoading, setIsLoading };
 };
 
 export const useUser = () => {
@@ -51,7 +54,7 @@ export const useUser = () => {
     throw new Error('useUser must be called within a UserProvider');
   }
 
-  const { user, setUser, isLoading, setIsLoading } = context;
+  const { user, setUser } = context;
 
-  return { user, setUser, isLoading, setIsLoading };
+  return { user, setUser };
 };

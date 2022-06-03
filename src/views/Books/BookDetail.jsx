@@ -14,9 +14,7 @@ export default function BookDetail() {
 
   useEffect(() => {
     const getBookDetails = async () => {
-      setIsLoading(true);
       await getSingleBook(id);
-      setIsLoading(false);
     };
     getBookDetails();
   }, []);

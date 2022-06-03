@@ -10,9 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     const setBookList = async () => {
-      setIsLoading(true);
       await getAllBooks();
-      setIsLoading(false);
     };
     setBookList();
   }, []);
