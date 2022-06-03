@@ -2,7 +2,6 @@ import BooksList from '../../components/Books/BooksList';
 import Header from '../../components/Header/Header';
 import { useBooks } from '../../hooks/books';
 import { useParams } from 'react-router-dom';
-import { useUser } from '../../hooks/user';
 import { useEffect } from 'react';
 
 export default function UsersBooks() {
@@ -22,8 +21,17 @@ export default function UsersBooks() {
   return (
     <div>
       <Header />
-      <h2>My Book Shelf</h2>
-      <BooksList bookList={userBookList}/>
+      {userBookList
+        ? (<>
+            <h2>My Book Shelf</h2>
+            <BooksList bookList={userBookList} />
+          </>)
+        : ( <>
+              <h2>My Book Shelf</h2>
+              <p>You haven't added any books to your shelf yet!</p>
+            </>)
+        }
+      
     </div>
   )
 }
