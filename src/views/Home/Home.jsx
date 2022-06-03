@@ -19,7 +19,8 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <h1 className={styles.mainShelf}>All The Cook's Books</h1>
+
+      <h1 className={styles.mainShelf}>All The Cooks Books</h1>
       <BooksList bookList={bookList}/>
     </div>
   );
