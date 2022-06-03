@@ -40,7 +40,29 @@ export async function getBooksByUserId(id) {
 }
 
 export async function fetchAllBooks() {
-  const res = await fetch(`${process.env.API_URL}/api/v1/books`);
-  const results = await res.json();
-  return results;
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/books`, {
+      method: 'GET',
+      credentials: 'include',
+      mode: 'cors',
+    });
+    const results = await res.json();
+    return results;
+  } catch (error) {
+    return error.message;
+  }
+}
+
+export async function addBookToUser(userId, bookId) {
+  try {
+    const res = await fetch(`${process.env.API_URL}/api/v1/books/userbook`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      mode: 'cors',
+      body: JSON.stringify({ userId, bookId }),
+    });
+  } catch (error) {
+    return error.message;
+  }
 }
