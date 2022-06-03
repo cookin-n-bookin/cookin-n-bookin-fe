@@ -28,7 +28,7 @@ export default function BookItem({ book }) {
             <h1 className={styles.bookTitle}>{book.title}</h1>
             <p className={styles.author}>{book.author}</p>
           </Link>
-          <button onClick={handleClick}>Add to My Shelf</button>
+          <button className={styles.addButton} onClick={handleClick}>Add to My Shelf</button>
         </div>
       )}
     </>

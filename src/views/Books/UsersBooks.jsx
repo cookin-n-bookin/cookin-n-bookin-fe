@@ -3,10 +3,12 @@ import Header from '../../components/Header/Header';
 import { useBooks } from '../../hooks/books';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import styles from '../../components/Books/Books.css';
 
 export default function UsersBooks() {
   const { userBookList, getUserBooks } = useBooks();
   const { id } = useParams();
+  const { user } = useUser();
 
   useEffect(() => {
     
@@ -21,9 +23,12 @@ export default function UsersBooks() {
   return (
     <div>
       <Header />
-      {userBookList
+
+      <h1 className={styles.userShelf}>{`${user.username}'s Books`}</h1>
+      <BooksList bookList={userBookList}/>
+
         ? (<>
-            <h2>My Book Shelf</h2>
+  
             <BooksList bookList={userBookList} />
           </>)
         : ( <>
@@ -31,7 +36,7 @@ export default function UsersBooks() {
               <p>You haven't added any books to your shelf yet!</p>
             </>)
         }
-      
+     
     </div>
   )
 }

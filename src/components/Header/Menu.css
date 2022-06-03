@@ -21,6 +21,7 @@
     font-family: sans-serif;
     cursor: pointer;
     color: var(--font);
+    padding-top: 1rem;
   }
   
   .sidebar {
@@ -49,7 +50,11 @@
   .sidebar a:hover {
     color: hotpink;
   }
-  
+
+  .sidebar button:hover {
+    color: hotpink;
+  }
+
   .authBtn {
     border: none;
     color: var(--font);
@@ -57,6 +62,7 @@
     font-size: 25px;
     font-family: 'Nixie One', sans-serif;
     padding: 8px 8px 8px 32px;
+    cursor: pointer;
   }
 
   .menuItems {
@@ -70,4 +76,4 @@
     color: white !important;
     font-style: italic;
   }
-  
+
