@@ -21,13 +21,13 @@
 }
 
 .book {
-  /* border: 1px blue solid; */
   cursor: pointer;
   height: 18rem;
   width: 10rem;
   margin: 0.5rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .bookTitle {

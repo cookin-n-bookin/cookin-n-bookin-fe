@@ -35,6 +35,6 @@ ul.tabNav li.active {
 }
 
 .tabContent {
-  font-size: 2rem;
-  text-align: center;
+  font-size: .9rem;
+  margin-left: 1rem;
 }
