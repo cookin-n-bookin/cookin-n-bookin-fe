@@ -1,4 +1,4 @@
 .nav {
   display: grid;
-  grid: 1fr / 1fr 1fr;
+  grid: 1fr / 1fr .1fr;
 }

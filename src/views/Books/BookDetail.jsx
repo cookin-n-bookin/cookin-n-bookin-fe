@@ -28,7 +28,7 @@ export default function BookDetail() {
             publicId={bookDetails.imageId}
           />
         </div>
-        <div>
+        <div className={styles.bookData}>
           <h1 className={styles.bookTitle}>{bookDetails.title}</h1>
           <p className={styles.author}>{bookDetails.author}</p>
         </div>

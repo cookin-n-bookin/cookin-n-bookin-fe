@@ -6,6 +6,8 @@ import Home from './views/Home/Home';
 import AddBook from './views/Books/AddBook';
 import BookDetail from './views/Books/BookDetail';
 import UsersBooks from './views/Books/UsersBooks';
+import About from './views/About/About';
+import FAQ from './views/FAQ/FAQ';
 
 export default function App() {
   return (
@@ -15,11 +17,17 @@ export default function App() {
         <Route exact path="/books">
           <Home />
         </Route>
+        <Route exact path="/faq">
+          <FAQ />
+        </Route>
         <PrivateRoute exact path="/books/new">
           <AddBook />
         </PrivateRoute>
         <Route exact path="/">
           <Redirect to="/books" />
+        </Route>
+        <Route exact path="/books/about">
+          <About />
         </Route>
         <Route exact path="/books/:id">
           <BookDetail />
