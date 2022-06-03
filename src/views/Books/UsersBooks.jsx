@@ -26,8 +26,8 @@ export default function UsersBooks() {
 
       <h1 className={styles.userShelf}>{`${user.username}'s Books`}</h1>
       <BooksList bookList={userBookList}/>
-
-        ? (<>
+      {
+       userBookList ? (<>
   
             <BooksList bookList={userBookList} />
           </>)
