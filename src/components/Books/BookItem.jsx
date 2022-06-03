@@ -3,10 +3,12 @@ import { Image } from 'cloudinary-react';
 import styles from './Books.css';
 import { useUser } from '../../hooks/user';
 import { addBookToUser } from '../../services/books';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function BookItem({ book }) {
   const { user, isLoading } = useUser();
-  const { history } = useHistory();
+  const location = useLocation();
+  const history = useHistory();
 
   const handleClick = async () => {
     await addBookToUser(user.id, book.id);
@@ -27,9 +29,11 @@ export default function BookItem({ book }) {
           <h1 className={styles.bookTitle}>{book.title}</h1>
           <p className={styles.author}>{book.author}</p>
         </Link>
-        <button className={styles.addButton} onClick={handleClick}>
-          Add to My Shelf
-        </button>
+        {location.pathname === '/books' && (
+          <button className={styles.addButton} onClick={handleClick}>
+            Add to My Shelf
+          </button>
+        )}
       </div>
     </>
   );
