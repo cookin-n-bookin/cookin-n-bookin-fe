@@ -4,6 +4,7 @@ import styles from './Books.css';
 import { useUser } from '../../hooks/user';
 import { addBookToUser } from '../../services/books';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import toast from 'react-hot-toast';
 
 export default function BookItem({ book }) {
   const { user, isLoading } = useUser();
@@ -12,6 +13,7 @@ export default function BookItem({ book }) {
 
   const handleClick = async () => {
     await addBookToUser(user.id, book.id);
+    toast('Added to your shelf!')
     history.replace(`/users/${user.id}/books`);
   };
 
