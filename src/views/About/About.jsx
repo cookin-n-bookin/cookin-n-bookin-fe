@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import styles from './About.css';
 import github from '../../../public/github.png';
-import linkedin from '../../public/linkedin.png';
+import linkedin from '../../../public/linkedin.png';
 
 export default function About() {
   return (
