@@ -15,9 +15,6 @@ export default function OwnersTab() {
     setBookOwnerList();
   }, [])
 
-
-  console.log('bookOwners in OwnersTab', bookOwners)
-
   return (
     <div>
       {bookOwners.map((owner) => 

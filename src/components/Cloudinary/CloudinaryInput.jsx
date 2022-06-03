@@ -19,7 +19,6 @@ export default function CloudinaryInput({
           required
           onChange={(e) => {
             setUploadedImage(e.target.files[0]);
-            console.log('files', e.target.files[0]);
           }}
         />
         <button onClick={uploadImage}>Upload Image</button>

@@ -8,15 +8,10 @@ export default function BookItem({ book }) {
   const { user, isLoading } = useUser();
 
   const handleClick = async () => {
-    console.log('user.id in handlecliick', user.id);
-    console.log('book.id in handlecliick', book.id);
-    console.log('book in handlecliick', book);
-    console.log('user in handlecliick', user);
     await addBookToUser(user.id, book.id);
   };
 
   if (isLoading) return null;
-  console.log('isLoading', isLoading);
 
   return (
     <>

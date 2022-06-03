@@ -16,9 +16,7 @@ export default function RecipesTab() {
 
 
   const handleSubmit = async () => {
-    console.log('tab');
     await addRecipe();
-    // setIsAddingRecipe(false);
   }
 
   if (isAddingRecipe) {

@@ -19,7 +19,6 @@ export default function AddRecipeForm({ label, onSubmit }) {
         e.preventDefault(); 
         const { title, page_number, ingredients, rating } = formState;
         try {
-            console.log('form');
           await onSubmit(title, page_number, ingredients, rating);
         } catch (error) {
           setError(error)

@@ -18,7 +18,6 @@ export default function AddBookForm({ label, onSubmit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { title, author } = formState;
-    console.log('publicId', publicId);
     try {
       await onSubmit(title, author, publicId);
     } catch (error) {

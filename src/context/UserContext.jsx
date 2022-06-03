@@ -10,7 +10,6 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     if (user.username) return;
-    // setIsLoading(true);
     getUser()
       .then((response) => setUser(response))
       .then(() => setIsLoggedIn(true))

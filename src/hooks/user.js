@@ -14,8 +14,6 @@ export const useAuth = () => {
     context;
 
   useEffect(() => {
-    console.log('!!user.username', !!user.username);
-    console.log('user', user);
     setIsLoggedIn(!!user.username);
   }, [user.username]);
 
