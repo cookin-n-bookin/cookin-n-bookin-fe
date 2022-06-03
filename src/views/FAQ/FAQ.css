@@ -1,0 +1,9 @@
+:root {
+  --font: #001440;
+  --background: #cfdddc;
+}
+
+.faq {
+  color: var(--font);
+  font-family: 'Nixie One', sans-serif;
+}
