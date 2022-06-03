@@ -28,14 +28,14 @@ export default function BookItem({ book }) {
             cloudName="dwwab45mm"
             publicId={book.imageId || book.image_id}
           />
-          <h1 className={styles.bookTitle}>{book.title}</h1>
-          <p className={styles.author}>{book.author}</p>
-        </Link>
-        {location.pathname === '/books' && (
+            {location.pathname === '/books' && (
           <button className={styles.addButton} onClick={handleClick}>
             Add to My Shelf
           </button>
         )}
+          <h1 className={styles.bookTitle}>{book.title}</h1>
+          <p className={styles.author}>{book.author}</p>
+        </Link>
       </div>
     </>
   );

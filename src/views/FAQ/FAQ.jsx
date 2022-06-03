@@ -39,7 +39,7 @@ export default function FAQ() {
         <p>
           A: We would love to hear from you! Please head over to the 'About Us'
           page to contact one of the amazing developers who worked on this
-          project. We will get back to you as quickly as possibly!
+          project. We will get back to you as quickly as possible!
         </p>
         <br />
         <h4>

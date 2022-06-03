@@ -16,18 +16,18 @@
 }
 
 .list {
-  /* border: 1px red solid; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 3rem;
+  margin: 3rem 2rem 0rem 2rem;
+  justify-content: center;
 }
 
 .book {
   cursor: pointer;
-  height: 17.5rem;
+  height: 21rem;
   width: 10rem;
-  margin: .5rem .5rem 3rem .5rem;
+  margin: .5rem 1rem 3rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -117,9 +117,6 @@ a:visited {
 }
 
 @media only screen and (min-width: 1000px) {
-  .listContainer {
-    margin-left: 5rem;
-  }
 
   .bookDetail {
     display: flex;
