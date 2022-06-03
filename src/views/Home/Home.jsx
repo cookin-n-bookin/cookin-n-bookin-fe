@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <h2>Browse All Recipe Books</h2>
       <BooksList bookList={bookList}/>
     </>
   );

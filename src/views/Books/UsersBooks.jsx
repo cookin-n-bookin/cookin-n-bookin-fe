@@ -22,6 +22,7 @@ export default function UsersBooks() {
   return (
     <div>
       <Header />
+      <h2>My Book Shelf</h2>
       <BooksList bookList={userBookList}/>
     </div>
   )
