@@ -56,3 +56,15 @@ a:link {
     height: 18rem;
     margin: 1rem 1rem 0rem 1rem; 
 }
+
+.addButton {
+  border: var(--font) .05rem solid;
+  background-color: white;
+  font-family: 'Nixie One', sans-serif;
+  color: var(--font);
+  padding: .2rem;
+  width: 6.5rem;
+  margin-top: .25rem;
+  cursor: pointer;
+  font-size: .7rem;
+}
