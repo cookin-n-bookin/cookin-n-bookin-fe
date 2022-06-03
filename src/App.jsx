@@ -6,6 +6,7 @@ import Home from './views/Home/Home';
 import AddBook from './views/Books/AddBook';
 import BookDetail from './views/Books/BookDetail';
 import UsersBooks from './views/Books/UsersBooks';
+import FAQ from './views/FAQ/FAQ';
 
 export default function App() {
   return (
@@ -14,6 +15,9 @@ export default function App() {
     <Switch>
         <Route exact path="/books">
           <Home />
+        </Route>
+        <Route exact path="/faq">
+          <FAQ />
         </Route>
         <PrivateRoute exact path="/books/new">
           <AddBook />

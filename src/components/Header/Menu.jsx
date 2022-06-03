@@ -45,6 +45,9 @@ export default function Menu() {
             <NavLink activeClassName={styles.active} exact to="/books">
               Browse Books
             </NavLink>
+            <NavLink activeClassName={styles.active} exact to="/faq">
+              FAQ
+            </NavLink>
             <AuthButton />
           </div>
         ) : (
@@ -60,6 +63,9 @@ export default function Menu() {
               to={`/users/${user.id}/books`}
             >
               My Shelf
+            </NavLink>
+            <NavLink activeClassName={styles.active} exact to="/faq">
+              FAQ
             </NavLink>
             <AuthButton />
           </div>
