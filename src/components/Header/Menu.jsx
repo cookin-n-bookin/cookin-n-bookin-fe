@@ -19,8 +19,6 @@ export default function Menu() {
   function handleClose() {
     setCloseNav(true);
     setOpenNav(false);
-
-  
   }
   return (
     <>
@@ -48,11 +46,14 @@ export default function Menu() {
             <NavLink activeClassName={styles.active} exact to="/faq">
               FAQ
             </NavLink>
+            <NavLink activeClassName={styles.active} exact to="/books/about">
+              About Us
+            </NavLink>
             <AuthButton />
           </div>
         ) : (
           <>
-          <div className={styles.menuItems}>
+            <div className={styles.menuItems}>
               <NavLink activeClassName={styles.active} exact to="/books">
                 Browse Books
               </NavLink>
@@ -68,11 +69,11 @@ export default function Menu() {
               <NavLink activeClassName={styles.active} exact to="/faq">
                 FAQ
               </NavLink>
-            <NavLink activeClassName={styles.active} exact to='/books/about'>
+              <NavLink activeClassName={styles.active} exact to="/books/about">
                 About Us
               </NavLink>
               <AuthButton />
-              </div>
+            </div>
           </>
         )}
       </div>
